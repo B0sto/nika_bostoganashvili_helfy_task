@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import "../styles/TaskList.css"
 import TaskItem from './TaskItem';
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ tasks, onDeleteTask }) => {
     const listRef = useRef(null);
     const animationRef = useRef(null);
     const positionRef = useRef(0);
@@ -104,7 +104,7 @@ const TaskList = ({ tasks }) => {
         >
             <div className="taskList" ref={listRef}>
                 {loopedTasks.map((task, index) => (
-                    <TaskItem key={`${task.id}-${index}`} task={task} />
+                    <TaskItem key={`${task.id}-${index}`} task={task} onDeleteTask={onDeleteTask}/>
                 ))}
             </div>
         </div>
