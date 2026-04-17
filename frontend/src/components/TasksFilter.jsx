@@ -1,8 +1,22 @@
 import React from 'react'
+import "../styles/taskFilter.css"
 
-const TasksFilter = () => {
+const TasksFilter = ({ currentFilter, onFilterChange }) => {
+  const filters = ["All", "Completed", "Pending"]
+
   return (
-    <div>TasksFilter</div>
+    <div className='taskFilter'>
+      {filters.map((filter) => (
+        <button
+          key={filter}
+          className={`filterBtn ${currentFilter === filter ? "active" : ""}`}
+          onClick={() => onFilterChange(filter)}
+
+        >
+          {filter}
+        </button>
+      ))}
+    </div>
   )
 }
 

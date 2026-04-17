@@ -7,11 +7,11 @@
     margin: 0 0 8px;
     font-size: 42px;
     font-weight: 600;
-    color: var(---text-primary);
+    color: var(--text-primary);
 }
 
 .header p {
-    color: var(---text-muted);
+    color: var(--text-muted);
 }
 
 @media (max-width: 768px) {

@@ -7,26 +7,27 @@
 }
 
 :root {
-    ---bg-primary: #0a0a0a;
-    ---bg-secondary: #141414;
-    ---bg-card: #1a1a1a;
-    ---bg-card-hover: #222222;
-    ---text-primary: #fafafa;
-    ---text-secondary: #a1a1aa;
-    ---text-muted: #71717a;
-    ---border-color: #27272a;
-    ---btn-primary: #f4f4f5;
-    ---btn-hover: #d8d8d8;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-card: #1a1a1a;
+    --bg-card-hover: #222222;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --accent-primary: #f4f4f5;
+    --border-color: #27272a;
+    --btn-primary: #f4f4f5;
+    --btn-hover: #d8d8d8;
 }
 
 body {
     font-family: "Montserrat", sans-serif;
-    background: var(---bg-primary);
+    background: var(--bg-primary);
     max-width: 1100px;
     margin: 0 auto;
     padding: 48px 24px;
     min-height: 100vh;
-    color: var(---text-primary);    
+    color: var(--text-primary);    
 }
 
 .wrapper {
@@ -47,8 +48,17 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+    background-color: var(--btn-primary);
 }
 
 .addNewTaskBtn:hover {
-    background-color: var(---btn-hover);
+    background-color: var(--btn-hover);
+}
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: end;
+    }
 }
