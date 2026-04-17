@@ -1,0 +1,30 @@
+.taskListContainer {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 10px;
+}
+
+
+.taskList {
+    display: flex;
+    gap: 16px;
+    will-change: transform;
+}
+
+
+.taskListEmpty {
+    padding: 60px;
+    text-align: center;
+    color: var(--text-muted);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+
+@media (max-width: 768px) {
+    .taskListContainer {
+        padding: 0 16px;
+    }
+}

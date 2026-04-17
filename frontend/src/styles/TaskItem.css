@@ -33,6 +33,9 @@
 .taskTitle {
     font-weight: 500;
     color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .taskTitle.completed {
@@ -67,6 +70,12 @@
     font-size: 13px;
     color: var(--text-secondary);
     line-height: 1.4;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
 }
 
 .taskDescription.completed {
@@ -110,14 +119,13 @@
 
 
 .btnEdit {
-    background-color: transparent;
+    background-color: var(--bg-card-hover);
     border: 1px solid var(--border-color);
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 .btnEdit:hover {
-    background-color: var(--bg-card-hover);
-    color: var(--text-primary);
+    background-color: #2e2e2e;
 }
 
 
