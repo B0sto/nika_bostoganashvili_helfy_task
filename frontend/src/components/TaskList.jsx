@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import TaskItem from './TaskItem';
 
-const TaskList = () => {
-    const [tasks, setTasks] = useState([]);
-
-    
+const TaskList = ({ tasks }) => {
 
     return (
-        <div>
+        <div className='taskList'>
             {tasks.map((task) => (
-                <TaskItem task={task}/>
+                <TaskItem key={task.id} task={task}/>
             ))}
         </div>
     )

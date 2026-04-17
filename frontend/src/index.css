@@ -18,6 +18,9 @@
     --border-color: #27272a;
     --btn-primary: #f4f4f5;
     --btn-hover: #d8d8d8;
+    --priority-low: #22c55e;
+    --priority-medium: #eab308;
+    --priority-high: #ef4444;
 }
 
 body {
