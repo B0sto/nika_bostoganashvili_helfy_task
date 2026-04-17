@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import TaskList from "./components/TaskList";
 import TasksFilter from "./components/TasksFilter"
 import { getTasks } from "./services/taskService";
+import { openModal } from "./components/Modal";
+import DeleteTaskModal from "./components/DeleteTaskModal";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -30,6 +32,15 @@ function App() {
     return true;
   })
 
+  const handleDeleteClick = (task) => {
+    openModal(DeleteTaskModal, {
+      task,
+      onSuccess: (taskId) => {
+        setTasks((prev) => prev.filter((item) => item.id != taskId))
+      }
+    })
+  }
+
   return (
     <div>
       <Header />
@@ -40,7 +51,7 @@ function App() {
         <button className="addNewTaskBtn">Add New Task</button>
       </div>
 
-      <TaskList tasks={filteredTasks} />
+      <TaskList tasks={filteredTasks} onDeleteTask={handleDeleteClick}/>
     </div>
   )
 };

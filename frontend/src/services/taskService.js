@@ -6,3 +6,13 @@ export const getTasks = async () => {
 
     return data;
 }
+
+export const deleteTask = async (id) => {
+    const response = await fetch(`${url}/${id}`, {
+        method: "DELETE"
+    })
+
+    if (!response.ok) throw new Error("failed to delete task");
+
+    return true;
+}
