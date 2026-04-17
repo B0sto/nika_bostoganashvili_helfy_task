@@ -52,4 +52,6 @@ npm start
 
 
 ### 5. Additional information
-custom infinite loop animation, with no third party libraries
+Custom infinite loop animation, with no third party libraries
+Time spent on frontend: 150 minutes
+Time spent on backend: 90 minutes
