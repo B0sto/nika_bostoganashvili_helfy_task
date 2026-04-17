@@ -64,7 +64,6 @@ tasksRouter.delete("/:id", (req,res) => {
 
 tasksRouter.patch("/:id/toggle", (req,res) => {
     const { id } = req.params;
-    const { priority } = req.body;
 
     const toPatchTaskIndex = tasks.findIndex(task => task.id === Number(id));
 
@@ -72,7 +71,7 @@ tasksRouter.patch("/:id/toggle", (req,res) => {
 
     tasks[toPatchTaskIndex] = {
         ...tasks[toPatchTaskIndex],
-        priority
+        completed: !tasks[toPatchTaskIndex].completed
     }
 
     res.json({ message: "priority status has been changed successfully", data: tasks[toPatchTaskIndex] })
